@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:Maxi.Model"
+             x:Class="Maxi.MainPage">
+
+
+    <CollectionView>
+        <CollectionView.ItemsSource>
+            <x:Array Type="{x:Type model:Store}">
+                <model:Store  Name="ICA" Description="Biggest store" Logo="ica.png"/>
+                <model:Store  Name="Coop" Description="Second biggest store" Logo="coop.jpg"/>
+                <model:Store  Name="Lidl" Description="Third biggest store" Logo="lidl.png"/>
+            </x:Array>
+        </CollectionView.ItemsSource>
+
+        <CollectionView.ItemTemplate>
+            <DataTemplate x:DataType="model:Store">
+                <HorizontalStackLayout Padding="10" Spacing="20">
+                    <Image Source="{Binding Logo}"
+                            HeightRequest="100"
+                            WidthRequest="100"
+                            Aspect="AspectFill"/>
+                    <VerticalStackLayout VerticalOptions="Center" Padding="10" Spacing="10">
+                        <Label Text="{Binding Name}" FontSize="24"></Label>
+                        <Label Text="{Binding Description}" FontSize="14"></Label>
+                    </VerticalStackLayout>
+                </HorizontalStackLayout>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+
+    </CollectionView>
+
+
+</ContentPage>
