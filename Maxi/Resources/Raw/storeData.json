@@ -1,0 +1,52 @@
+[
+    {
+        "name": "ICA",
+        "description": "One of Sweden's largest grocery chains, offering a variety of fresh produce, pantry items, and household goods.",
+        "logo": "ica.png"
+    },
+    {
+        "name": "Coop",
+        "description": "A well-known Swedish supermarket chain focused on sustainability and eco-friendly products.",
+        "logo": "coop.jpg"
+    },
+    {
+        "name": "Willys",
+        "description": "A popular discount grocery chain with a wide range of affordable groceries and household items.",
+        "logo": "willys.jpg"
+    },
+    {
+        "name": "Hemköp",
+        "description": "A chain of supermarkets with a focus on quality groceries and fresh produce.",
+        "logo": "hemkop.png"
+    },
+    {
+        "name": "Lidl",
+        "description": "A German-based discount store with locations across Sweden, known for budget-friendly groceries and weekly deals.",
+        "logo": "lidl.png"
+    },
+    {
+        "name": "City Gross",
+        "description": "A supermarket chain offering fresh food, locally sourced products, and bulk shopping options.",
+        "logo": "city_gross.png"
+    },
+    {
+        "name": "MatHem",
+        "description": "An online grocery store delivering fresh groceries, household essentials, and recipe kits to your doorstep.",
+        "logo": "mathem.png"
+    },
+    {
+        "name": "Netto",
+        "description": "A discount chain providing low-cost groceries, primarily in urban areas with essential food and household products.",
+        "logo": "netto.png"
+    },
+    {
+        "name": "Axfood Snabbgross",
+        "description": "A wholesale and cash-and-carry store focused on bulk food supplies for households and businesses.",
+        "logo": "axfood_snabbgross.png"
+    },
+    {
+        "name": "Paradiset",
+        "description": "A small chain specializing in organic and locally sourced foods, with an emphasis on sustainability.",
+        "logo": "paradiset.png"
+    }
+]
