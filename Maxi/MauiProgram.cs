@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Maxi.Services;
+using Maxi.ViewModel;
+using Microsoft.Extensions.Logging;
 
 namespace Maxi;
 
@@ -14,6 +16,10 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
+
+        builder.Services.AddSingleton<StoreService>();
+		builder.Services.AddSingleton<StoresViewModel>();
+		builder.Services.AddSingleton<MainPage>();
 
 #if DEBUG
 		builder.Logging.AddDebug();
