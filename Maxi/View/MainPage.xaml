@@ -7,31 +7,37 @@
              Title="{Binding Title}"
              x:Class="Maxi.MainPage">
 
-    <CollectionView>
-        <CollectionView.ItemsSource>
-            <x:Array Type="{x:Type model:Store}">
-                <model:Store  Name="ICA" Description="Biggest store" Logo="ica.png"/>
-                <model:Store  Name="Coop" Description="Second biggest store" Logo="coop.jpg"/>
-                <model:Store  Name="Lidl" Description="Third biggest store" Logo="lidl.png"/>
-            </x:Array>
-        </CollectionView.ItemsSource>
+    <Grid ColumnDefinitions="*,*"
+          ColumnSpacing="5"
+          RowDefinitions="*, auto">
+        <CollectionView>
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:Store">
+                    <Grid Padding="10">
+                        <Frame HeightRequest="125">
+                            <Label Text="{Binding Name}"></Label>
+                        </Frame>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
 
-        <CollectionView.ItemTemplate>
-            <DataTemplate x:DataType="model:Store">
-                <HorizontalStackLayout Padding="10" Spacing="20">
-                    <Image Source="{Binding Logo}"
-                            HeightRequest="100"
-                            WidthRequest="100"
-                            Aspect="AspectFill"/>
-                    <VerticalStackLayout VerticalOptions="Center" Padding="10" Spacing="10">
-                        <Label Text="{Binding Name}" FontSize="24"></Label>
-                        <Label Text="{Binding Description}" FontSize="14"></Label>
-                    </VerticalStackLayout>
-                </HorizontalStackLayout>
-            </DataTemplate>
-        </CollectionView.ItemTemplate>
+        <Button Grid.Row="1"
+                Text="Get Stores"
+                Command="{Binding GetStoresCommand}"
+                IsEnabled="{Binding IsNotBusy}"
+                Margin="8">
+        </Button>
 
-    </CollectionView>
+        <ActivityIndicator IsVisible="{Binding IsBusy}"
+                           IsRunning="{Binding IsBusy}"
+                           HorizontalOptions="FillAndExpand"
+                           VerticalOptions="CenterAndExpand"
+                           Grid.RowSpan="2"
+                           Grid.ColumnSpan="2">
+
+        </ActivityIndicator>
+    </Grid>
 
 
 </ContentPage>

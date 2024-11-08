@@ -10,19 +10,19 @@ public class StoreService
     {
         httpClient = new HttpClient();
     }
-    public List<Store> storeList = new ();
+    public List<Store> storeList;
 
     public async Task<List<Store>> GetStores()
     {
-        if (storeList.Count > 0)
+        if (storeList?.Count > 0)
         {
             return storeList;
         }
 
         using var stream = await FileSystem.OpenAppPackageFileAsync("storeData.json");
         using var reader = new StreamReader(stream);
-        var contents = await reader.ReadToEndAsync(); 
-        storeList = JsonSerializer.Deserialize<List<Store>>(contents); 
+        var contents = await reader.ReadToEndAsync();
+        storeList = JsonSerializer.Deserialize<List<Store>>(contents) ?? new List<Store>();
 
         return storeList;
     }
